@@ -1,13 +1,200 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+    --rojo-a: #FF0000;
+    --rojo-b: #950101;
+    --rojo-c: #3D0000;
+    --amarillo: #FBFF00;
+    --negro: #000000;
+    --blanco: #ffffff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: LiberBold ;
+    src: url('./ttf/LiberGrotesqueFamily-Bold.ttf');
+}
+
+@font-face {
+    font-family: LiberNormal ;
+    src: url('./ttf/LiberGrotesqueFamily-Light.ttf');
+}
+
+html,body{
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.m__nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 0 10%;
+    height: 10vh;
+    z-index: 100;
+}
+.m__logo{
+    color: var(--negro);
+    background: var(--blanco);
+    transform: skewX(-10deg);
+    padding: 10px 10px 5px 10px ;
+    text-align: center;
+    font-family: LiberBold;
+    -webkit-text-stroke: 2px black;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.m__nav-list{
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.m__nav-list--i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    font-size: 1rem;
+    font-family:  LiberNormal;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+    height: 80%;
+    padding: 0 20px;
+    transition: .3s ease;
+}
+
+.m__nav-list--i:hover{
+    background-color: var(--rojo-a);
+    -webkit-text-stroke: 1px white;
+    box-shadow: 0 0 10px var(--rojo-a);
+    transform: skewX(-10deg);
+}
+
+.m__menu-toggle{
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    transform: scale(.7) ;
+    transition: .4s ease-out;
+    cursor: pointer;
+}
+.active{
+    transform: scale(.7) rotate(180deg);
+    background-image: linear-gradient(45deg, transparent 40%,red 40.1%, red 60%, transparent 60.1%),linear-gradient(-45deg, transparent 40%,red 40.1%, red 60%, transparent 60.1%) !important;
+    border-radius: 10px;
+}
+
+@media (max-width:600px) {
+    .m__menu-toggle{
+        display: unset; 
+        background-image: linear-gradient( var(--rojo-a) 20%, transparent 20.1%, transparent 40% ,var(--rojo-a) 40.1%, var(--rojo-a) 60%, transparent 60.1%, transparent 80%,var(--rojo-a) 80.1%);
+    }
+
+    .m__nav-list{
+        position: absolute;
+        top: 15vh;
+        left: 100%;
+        width: 90vw;
+        padding: 10vw;
+        height: min-content;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+        background-color: #00000044;
+        border-radius: 10px;
+        transition: .2s ease-in-out;
+    }
+    .m__nav-list--i{
+        width: 100%;
+        height: 5rem;
+        font-size: 1.3rem;
+    }
+}
+
+.m__nav-listActive{
+    left: 5%;
+}
+
+/* ---------------- */
+/* ---- Header ---- */
+/* ---------------- */
+
+.m__header{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('./images/wall88.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.m__header::before{
+    position: absolute;
+    content: "";
+    background: -moz-radial-gradient(center, ellipse cover, #95010166 0%, #000000DD 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #95010166 0%, #000000DD 100%);
+    background: radial-gradient(ellipse at center, #95010166 0%, #000000DD 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+h1,h3{
+    font-family: LiberNormal;
+    text-transform: uppercase;
+    color: var(--blanco);
+    text-align: center;
+    z-index: 5;
+    letter-spacing: 3px;
+}
+h1{font-size: 4rem;
+-webkit-text-stroke: 2px white;}
+h3{font-size: 1.5rem;}
+
+.m__header h1 strong{
+    -webkit-text-stroke: 2px var(--rojo-a);
+    color: var(--rojo-a);
+}
+
+.m__header-buttom{
+    background-color: var(--rojo-a);
+    color: var(--blanco);
+    border-radius: 3px;
+    font-family: LiberBold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 50px;
+    padding: 20px 30px;
+    z-index: 6;
+    transition: .2s ease;
+}
+
+.m__header-buttom:hover{
+    color: var(--rojo-a);
+    background-color: var(--blanco);
+    box-shadow: 0 0 8px var(--blanco);
 }
