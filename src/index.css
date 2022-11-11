@@ -7,6 +7,15 @@
     --blanco: #ffffff;
 }
 
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--rojo-b);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -27,6 +36,7 @@ html,body{
     position: relative;
     width: 100vw;
     overflow-x: hidden;
+    overflow: overlay;
 }
 
 .m__nav{
@@ -40,8 +50,15 @@ html,body{
     width: 100vw;
     padding: 0 10%;
     height: 10vh;
+    transition: .5s ease-in-out;
     z-index: 100;
 }
+
+.navActive{
+    background-color: var(--negro);
+    box-shadow: 0 0 10px var(--rojo-a) ;
+}
+
 .m__logo{
     color: var(--negro);
     background: var(--blanco);
