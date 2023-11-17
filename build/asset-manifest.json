@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mentor/static/css/main.ec7db63f.css",
+    "main.js": "/mentor/static/js/main.b45c4e4e.js",
+    "static/media/wall88.jpg": "/mentor/static/media/wall88.6588434ce6f071078039.jpg",
+    "static/media/LiberGrotesqueFamily-Light.ttf": "/mentor/static/media/LiberGrotesqueFamily-Light.021b3e211ded6e972e9b.ttf",
+    "static/media/LiberGrotesqueFamily-Bold.ttf": "/mentor/static/media/LiberGrotesqueFamily-Bold.04724d2e2db37d9c8a7f.ttf",
+    "static/media/wall999.jpg": "/mentor/static/media/wall999.fe38ad0ec5ddda49edde.jpg",
+    "static/media/wall666_color.jpg": "/mentor/static/media/wall666_color.5903e883b0da0b0e2350.jpg",
+    "static/media/wall333_color.jpg": "/mentor/static/media/wall333_color.88cc6d8a6eb370692ba9.jpg",
+    "index.html": "/mentor/index.html",
+    "main.ec7db63f.css.map": "/mentor/static/css/main.ec7db63f.css.map",
+    "main.b45c4e4e.js.map": "/mentor/static/js/main.b45c4e4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec7db63f.css",
+    "static/js/main.b45c4e4e.js"
+  ]
+}
